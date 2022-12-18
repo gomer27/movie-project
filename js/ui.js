@@ -16,3 +16,14 @@ UI.prototype.clearInputs = function (element1, element2, element3) {
   element2.value = "";
   element3.value = "";
 };
+UI.prototype.displayMessages = function (message, type) {
+  const cardBody = document.querySelectorAll(".card-body")[0];
+  // Alert divini oluşturma
+  const div = document.createElement("div");
+  div.className = `alert alert-${type}`;
+  div.textContent = message;
+  cardBody.appendChild(div);
+  setTimeout(function () {
+    div.remove();
+  }, 2000);
+};
