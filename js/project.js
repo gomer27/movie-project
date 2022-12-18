@@ -42,5 +42,10 @@ function addFlim(e) {
 function deleteFilm(e) {
   if (e.target.id === "delete-film") {
     ui.deleteFilmFromUI(e.target);
+    storage.deleteFilmFromStorage(
+      e.target.parentElement.previousElementSibling.previousElementSibling
+        .textContent
+    );
+    ui.displayMessages("Silme işlemi başarılı...", "success");
   }
 }

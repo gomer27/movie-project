@@ -14,3 +14,23 @@ Storage.prototype.getFilmsFromStorage = function () {
   }
   return films;
 };
+
+Storage.prototype.deleteFilmFromStorage = function (filmTitle) {
+  let films = this.getFilmsFromStorage();
+  films.foreach(function (film, index) {
+    if (film.title === filmTitle) {
+      films.splice(index, 1);
+    }
+  });
+  localStorage.setItem("films", JSON.stringify(films));
+};
+
+Storage.prototype.deleteFilmFromStorage = function (filmTitle) {
+  let films = this.getFilmsFromStorage();
+  films.forEach(function (film, index) {
+    if (film.title === filmTitle) {
+      films.splice(index, 1);
+    }
+  });
+  localStorage.setItem("films", JSON.stringify(films));
+};
