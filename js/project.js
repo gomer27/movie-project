@@ -13,6 +13,10 @@ eventListerners();
 
 function eventListerners() {
   form.addEventListener("submit", addFlim);
+  document.addEventListener("DOMContentLoaded", function () {
+    let films = storage.getFilmsFromStorage();
+    ui.loadAllFilms(films);
+  });
 }
 
 function addFlim(e) {
